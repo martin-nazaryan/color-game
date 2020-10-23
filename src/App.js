@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.css';
-import Btn from "./components/Btn";
-import {copyArray, generateRenderData} from "./helpers";
 import BtnContainer from "./components/BtnContainer";
 
 class App extends React.Component {
