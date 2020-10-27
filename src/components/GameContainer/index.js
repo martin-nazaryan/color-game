@@ -29,7 +29,7 @@ const GameContainer = ({setFinished, step, incrementStep}) => {
 
   useEffect(() => {
     won && setFinished(true);
-  }, [won]);
+  }, [won, setFinished]);
 
   const handleClick = (index) => {
     const clickedColor = colorsData[index][colorsData[index].length - 1];

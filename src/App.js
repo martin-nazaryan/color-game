@@ -8,8 +8,6 @@ function App() {
   const [finished, setFinished] = useState(false);
   const [step, setStep] = useState(0);
 
-  console.log(finished);
-
   const incrementStep = () => {
     setStep(step + 1);
   };
