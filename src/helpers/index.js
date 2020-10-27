@@ -1,15 +1,13 @@
+import produce from 'immer';
+
 export const generateRenderData = (data, maxCount) => {
-  const clonedData = copyArray(data);
+  return produce(data, draftData => {
+    draftData.map(colors => {
+      if (colors.length < maxCount) {
+        while (colors.length !== maxCount) colors.push('');
+      }
 
-  return clonedData.map(colors => {
-    if (colors.length < maxCount) {
-      while (colors.length !== maxCount) colors.push('');
-    }
-
-    return colors;
+      return colors;
+    });
   });
-}
-
-export const copyArray = (arr) => {
-  return arr.map(value => [...value])
-}
+};

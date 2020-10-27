@@ -2,30 +2,58 @@
   "maxCount": 4,
   "colors": [
     [
-      "blue",
+      "teal",
+      "teal",
+      "teal",
+      "teal"
+    ],
+    [
+      "cornflowerblue",
+      "cornflowerblue",
+      "cornflowerblue",
+      "cornflowerblue"
+    ],
+    [
       "purple",
-      "yellow",
-      "orange"
-    ],
-    [
-      "orange",
-      "yellow"
-    ],
-    [
-      "blue",
       "purple",
-      "blue"
+      "purple",
+      "purple"
     ],
     [
-      "yellow",
-      "orange",
+      "brown",
+      "brown",
+      "brown"
+    ],
+    [
+      "brown"
+    ]
+  ],
+  "colors2": [
+    [
+      "teal",
+      "purple",
+      "brown",
+      "cornflowerblue"
+    ],
+    [
+      "cornflowerblue",
+      "brown"
+    ],
+    [
+      "teal",
+      "purple",
+      "teal"
+    ],
+    [
+      "brown",
+      "cornflowerblue",
       "purple"
     ],
     [
       "purple",
-      "orange",
-      "yellow",
-      "blue"
+      "cornflowerblue",
+      "brown",
+      "teal"
     ]
   ]
 }
