@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
 import GameContainer from './components/GameContainer';
 import {Container} from 'react-bootstrap';
 import WonContainer from './components/WonContainer';
+import {connect} from 'react-redux';
+import {setFinished, setStep} from './store/actions';
+import {bindActionCreators} from 'redux';
 
-function App() {
-  const [finished, setFinished] = useState(false);
-  const [step, setStep] = useState(0);
-
+function App({finished, step, setFinished, setStep, dispatch}) {
   const incrementStep = () => {
     setStep(step + 1);
   };
@@ -25,4 +25,17 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state, ownProps) => ({
+  finished: state.finished,
+  step: state.step
+});
+
+
+const mapDispatchToProps = (dispatch, ownProps) => bindActionCreators({
+    setStep,
+    setFinished
+  },
+  dispatch
+);
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
