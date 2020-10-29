@@ -5,11 +5,15 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {createStore} from 'redux';
-import rootReducer from './store/reducers';
-import {composeWithDevTools} from 'redux-devtools-extension';
 import {Provider} from 'react-redux';
+import {composeWithDevTools} from 'redux-devtools-extension';
+import rootReducer from './store/reducers';
 
-const store = createStore(rootReducer, composeWithDevTools());
+const initialState = {
+  finished: false
+};
+
+const store = createStore(rootReducer, initialState, composeWithDevTools());
 
 ReactDOM.render(
   <React.StrictMode>

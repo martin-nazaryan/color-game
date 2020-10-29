@@ -4,8 +4,13 @@ import Step from '../Steps';
 import produce from 'immer';
 import useWon from '../../hooks/useWon';
 import useRenderData from '../../hooks/useRenderData';
+import {setFinished, incrementStep} from '../../store/actions';
+import { useDispatch, useSelector } from 'react-redux';
 
-const GameContainer = ({setFinished, step, incrementStep}) => {
+const GameContainer = () => {
+  const step = useSelector(state => state.step);
+  const dispatch = useDispatch();
+
   const maxCount = useRef(null);
 
   const [colorsData, setColorsData] = useState([]);
@@ -28,8 +33,8 @@ const GameContainer = ({setFinished, step, incrementStep}) => {
   }, []);
 
   useEffect(() => {
-    won && setFinished(true);
-  }, [won, setFinished]);
+    won && dispatch(setFinished(true));
+  }, [won, dispatch]);
 
   const handleClick = (index) => {
     const clickedColor = colorsData[index][colorsData[index].length - 1];
@@ -43,7 +48,7 @@ const GameContainer = ({setFinished, step, incrementStep}) => {
       setSelectedColor(clickedColor);
       setSelectedIndex(index);
 
-      incrementStep();
+      dispatch(incrementStep());
       return;
     }
 

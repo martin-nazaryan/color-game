@@ -1,6 +1,6 @@
-import {SET_FINISHED} from '../types';
+import {SET_FINISHED} from '../actions';
 
-export const finished = (state = false, action) => {
+const finished = (state = false, action) => {
   switch (action.type) {
     case SET_FINISHED:
       return action.payload;
@@ -8,3 +8,5 @@ export const finished = (state = false, action) => {
       return state;
   }
 };
+
+export default finished;

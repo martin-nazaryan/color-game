@@ -1,11 +1,16 @@
 import React from 'react';
 import {Card, Button} from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFinished, setStep } from '../../store/actions';
 import Step from '../Steps';
 
-function WonContainer({setFinished, setStep, step}) {
+function WonContainer() {
+  const step = useSelector(state => state.step);
+  const dispatch = useDispatch();
+
   const handlePlayAgain = () => {
-    setFinished(false);
-    setStep(0);
+    dispatch(setFinished(false));
+    dispatch(setStep(0));
   };
 
   return (
